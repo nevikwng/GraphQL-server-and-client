@@ -56,10 +56,10 @@ const Index = () => {
       if (lastName && firstName && status && age) {
         await createUser({
           variables: {
-            lastName: lastName,
-            firstName: firstName,
-            status: status,
-            age: age
+            lastName,
+            firstName,
+            status,
+            age
           },
         });
       }
@@ -70,11 +70,11 @@ const Index = () => {
 
   const TodoDone = async () => {
     try {
-        await deleteUser({
-          variables: {
-            id: 1,
-          },
-        });
+      await deleteUser({
+        variables: {
+          id: 1,
+        },
+      });
     } catch (error) {
       console.error(error);
     }
@@ -158,7 +158,7 @@ const Index = () => {
             defaultValue={status}
             onChange={e => setStatus(e.target.value)}
           />
-           <TextField
+          <TextField
             required
             id="outlined-required"
             label="age"
